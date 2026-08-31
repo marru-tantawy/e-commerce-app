@@ -55,16 +55,19 @@ export default async  function FeaturedProducts() {
     const products =await getAllproducts()
   return (
     <>
-      <div className='mx-auto w-[90%] md:w-[80%] '>
-        <h1 className='text-2xl font-bold border-s-4 p-1.5 mb-7 border-[#0AAD0A]'>Featured <span className='text-[#0AAD0A]'>Products</span></h1>
+      <div className='mx-auto w-[90%] md:w-full my-5 '>
+        <h1 className='text-2xl font-bold border-s-4 p-1.5 mx-2 mb-7 border-[#0AAD0A]'>Featured <span className='text-[#0AAD0A]'>Products</span></h1>
         <div className='p-1.5 mb-14'>
-                <div className='flex  flex-wrap justify-between '>
+                <div className='flex  flex-wrap md:gap-1.5 justify-center  '>
                     {products.map((product) => (
-                        <Link className=' md:w-1/4 w-1/2 lg:w-1/6 border p-1.5 my-2 md:m-2  ' key={product._id} href={`/productdetails/${product._id}`}>
-                                <div  className=' '>
-                        <div className='flex flex-col justify-between items-between'>
-                            <div className='w-full relative h-60 object-cover '>
-                           <Image fill  className='object-cover rounded-md'  src={product.imageCover} alt={product.title} />
+                      <div  key={product._id} className='px-4 bg-[white] w-full md:w-1/4 xl:w-1/6 my-2 md:my-2 shadow hover:shadow-2xl transition-all border rounded-3xl '>
+                        <Link className='  '  href={`/productdetails/${product._id}`}>
+                              
+                               
+                        <div className=' p-4   relative  flex flex-col justify-around h-70  '>
+                          
+                            <div className='w-full  flex flex-col justify-center items-center  '>
+                           <img className='object-cover rounded-md size-25 text-center'  src={product.imageCover} alt={product.title} />
                             </div>
                             <div className='flex justify-between items-center'>
                                 <div>
@@ -88,15 +91,16 @@ export default async  function FeaturedProducts() {
                             </div>                           
                              </div>
                             <div>
+                              </div> 
                                 <Button className='bg-[#0AAD0A] text-2xl p-1 text-white rounded-full cursor-pointer'><IoAdd />
 
 </Button>
                             </div>
                             </div>
                             
+                                    
+                         </Link>
                         </div>
-                                    </div>
-                        </Link>
                     
             )
                 

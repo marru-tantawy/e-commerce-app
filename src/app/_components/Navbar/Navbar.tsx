@@ -61,7 +61,7 @@ export default function Navbar() {
       <div className='flex items-center gap-3'>
           <FaRegHeart />
           <FaShoppingCart />
-          <FaUser className='hidden md:block' />
+          <Link href={'/login'}> <FaUser className='hidden md:block' /></Link>
           <Button className=' text-white bg-[#0AAD0A] rounded-full md:hidden  p-1'>
               <FaBars  />
           </Button>
